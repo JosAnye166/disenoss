@@ -2,7 +2,7 @@ import 'package:disenos/src/pages/basico_page.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
-
+//one
 class MyApp extends StatelessWidget {
 
   @override
