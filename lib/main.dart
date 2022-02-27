@@ -1,8 +1,9 @@
 import 'package:disenos/src/pages/basico_page.dart';
+import 'package:disenos/src/pages/scroll_page.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
-//Prim
+
 class MyApp extends StatelessWidget {
 
   @override
@@ -10,11 +11,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Diseños',
-      initialRoute: 'basico',
+      initialRoute: 'scroll',
       routes: {
         'basico'  :  (BuildContext context) => BasicoPage(),
-      },
-       //wS
+        'scroll'  :  (BuildContext context) => ScrollPage(),
+      }, 
       
     );
   }
