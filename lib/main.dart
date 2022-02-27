@@ -2,7 +2,7 @@ import 'package:disenos/src/pages/basico_page.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
-//one
+//Prim
 class MyApp extends StatelessWidget {
 
   @override
