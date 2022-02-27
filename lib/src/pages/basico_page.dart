@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class BasicoPage extends StatelessWidget {
@@ -12,57 +13,70 @@ final estiloSubTitulo = TextStyle(fontSize: 20.0, color: Colors.grey);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: <Widget>[
+      body: SingleChildScrollView(
+       child: Column( 
+         children: <Widget>[
 
          _crearImagem(),
          _crearTitulo(),
          _crearAcciones(), 
          _crearTexto(),
-         
+         _crearTexto(),
+         _crearTexto(),
+         _crearTexto(),
+         _crearTexto(),
+
 
         
 
-        ],
+        ],),
       )
     );
   }
   Widget _crearImagem(){
 
-    return Image(
-            image: NetworkImage('https://cdn.pixabay.com/photo/2016/08/09/21/54/lake-1581879__340.jpg')
-          );
+    return Container(
+      width: double.infinity,
+      child: Image(
+              image: NetworkImage('https://cdn.pixabay.com/photo/2016/08/09/21/54/lake-1581879__340.jpg'),
+              height: 200.0,
+              fit: BoxFit.cover,
+
+          
+            ),
+    );
   } 
 
   Widget _crearTitulo(){
 
-    return Container(
-             padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
-             child: Row(
-               children: <Widget> [
-
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget> [
-                      Text('Lago en lugar frio', style: estiloTitulo),
-                      SizedBox( height: 7.0),
-                      Text('Lago en las montañas', style: estiloSubTitulo),
-                    ],
+    return SafeArea(
+      child: Container(
+               padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
+               child: Row(
+                 children: <Widget> [
+    
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget> [
+                        Text('Lago en lugar frio', style: estiloTitulo),
+                        SizedBox( height: 7.0),
+                        Text('Lago en las montañas', style: estiloSubTitulo),
+                      ],
+                    ),
                   ),
+    
+                  Icon(Icons.star, color: Colors.red, size: 30.0,),
+                  Text('41', style: TextStyle( fontSize: 20.0)),
+    
+    
+    
+                 ],
                 ),
-
-                Icon(Icons.star, color: Colors.red, size: 30.0,),
-                Text('41', style: TextStyle( fontSize: 20.0)),
-
-
-
-               ],
-              ),
-           );
+             ),
+    );
 
   }
-
 
   Widget _crearAcciones(){
 
@@ -81,6 +95,7 @@ final estiloSubTitulo = TextStyle(fontSize: 20.0, color: Colors.grey);
 
 
   }
+
   Widget _accion(IconData icon, String texto){
 
     return Column(
@@ -94,16 +109,17 @@ final estiloSubTitulo = TextStyle(fontSize: 20.0, color: Colors.grey);
 
   Widget _crearTexto(){
 
-    return Container(
+    return SafeArea(
       
-      padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+      child: Container(
+      padding: EdgeInsets.symmetric(horizontal: 40.0,),
       child: Text(
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
         textAlign: TextAlign.justify,
       
       
       ),
-
+    ),
     );
 
   }
