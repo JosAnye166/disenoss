@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       routes: {
         'basico'  :  (BuildContext context) => BasicoPage(),
       },
-       
+       //wS
       
     );
   }
