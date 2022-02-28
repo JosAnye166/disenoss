@@ -64,7 +64,6 @@ Widget _fondoApp(){
       ],
     );
 
-
 }
 
 }
