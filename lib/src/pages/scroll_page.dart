@@ -45,7 +45,7 @@ class ScrollPage extends StatelessWidget {
       ),
     );
   }
-//sa
+
   Widget _textos(){
 
     final estiloTexto = TextStyle(color: Colors.white, fontSize: 50.0);
