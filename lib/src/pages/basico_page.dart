@@ -37,8 +37,7 @@ final estiloSubTitulo = TextStyle(fontSize: 20.0, color: Colors.grey);
 
     return Container(
       width: double.infinity,
-      child: Image(
-              image: NetworkImage('https://cdn.pixabay.com/photo/2016/08/09/21/54/lake-1581879__340.jpg'),
+      child: Image(image: AssetImage('assets/imagen_1.webp'),
               height: 200.0,
               fit: BoxFit.cover,
 

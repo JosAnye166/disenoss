@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
@@ -136,29 +137,29 @@ Widget _titulos(){
     children: [
       TableRow(
         children: [
-          _crearBotonRedondeado(),
-          _crearBotonRedondeado(),
+          _crearBotonRedondeado(Colors.blue, Icons.border_all, 'General'),
+          _crearBotonRedondeado(Colors.purpleAccent, Icons.directions_bus, 'Bus'),
         ],
       ),
 
        TableRow(
         children: [
-          _crearBotonRedondeado(),
-          _crearBotonRedondeado(),
+          _crearBotonRedondeado(Colors.red, Icons.alarm_add, 'Alarma'),
+          _crearBotonRedondeado(Color.fromARGB(255, 31, 255, 1), Icons.mail, 'Email'),
         ]
       ),
 
        TableRow(
         children: [
-          _crearBotonRedondeado(),
-          _crearBotonRedondeado(),
+          _crearBotonRedondeado(Color.fromARGB(255, 211, 198, 16), Icons.location_on, 'Ubicacion'),
+          _crearBotonRedondeado(Color.fromARGB(255, 250, 22, 129), Icons.account_box_rounded, 'General'),
         ]
       ),
 
        TableRow(
         children: [
-          _crearBotonRedondeado(),
-          _crearBotonRedondeado(),
+          _crearBotonRedondeado(Color.fromARGB(255, 18, 238, 172), Icons.add_call, 'Llmadas'),
+          _crearBotonRedondeado(Color.fromARGB(255, 255, 103, 1), Icons.add_to_drive_sharp, 'Driver'),
         ]
       )
 
@@ -167,30 +168,35 @@ Widget _titulos(){
   
 }   
 
-Widget _crearBotonRedondeado(){
+Widget _crearBotonRedondeado( Color color, IconData icono, String texto){
 
-  return Container(
-    height: 180.0,
-    margin: EdgeInsets.all(15.0),
-    decoration: BoxDecoration(
-      color: Color.fromRGBO(62, 66, 107 , 0.70),
-      borderRadius: BorderRadius.circular(20.0)
 
+  return ClipRect(
+    child: BackdropFilter(
+    filter: ImageFilter.blur( sigmaX: 0.50, sigmaY: 0.50),
+    child: Container(
+      height: 180.0,
+      margin: EdgeInsets.all(15.0),
+      decoration: BoxDecoration(
+        color: Color.fromRGBO(62, 66, 107 , 0.70),
+        borderRadius: BorderRadius.circular(20.0)
+  
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: <Widget> [
+          SizedBox(height: 5.0,),
+          CircleAvatar(
+            backgroundColor: color,
+            radius: 35.0,
+            child: Icon( icono, color: Colors.white, size: 30.0,),
+          ),
+          Text( texto, style: TextStyle(color: color)),
+          SizedBox(height: 5.0,)
+        ],
+      ),
     ),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: <Widget> [
-                SizedBox(height: 5.0,),
-
-        CircleAvatar(
-          backgroundColor: Colors.pinkAccent,
-          radius: 35.0,
-          child: Icon(Icons.admin_panel_settings, color: Colors.white, size: 30.0,),
-        ),
-        Text('soa', style: TextStyle(color: Colors.pinkAccent)),
-        SizedBox(height: 5.0,)
-      ],
-    ),
+    )
   );
 }
           
